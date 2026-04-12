@@ -1,3 +1,5 @@
+"use client";
+
 export default function Hero() {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);

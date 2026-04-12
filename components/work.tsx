@@ -1,3 +1,5 @@
+"use client";
+
 export default function Work() {
   const workItems = [
     { title: "Project 1", category: "Long Form" },
