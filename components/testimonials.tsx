@@ -48,10 +48,9 @@ const testimonials = [
 const doubled = [...testimonials, ...testimonials];
 
 const stats = [
-  { value: "200%", label: "More views. On average." },
-  { value: "15%", label: "CTR boost from our thumbnails" },
-  { value: "5x", label: "Better engagement with our hooks" },
-  { value: "30%", label: "More reach. Real SEO." },
+  { value: "50M+", label: "Trusted by creators with subscribers" },
+  { value: "120M+", label: "Generated views" },
+  { value: "800+", label: "Videos shipped" },
 ];
 
 export default function Testimonials() {
@@ -98,13 +97,18 @@ export default function Testimonials() {
         </div>
       </div>
 
-      {/* Creators trust bar + stats from image */}
-      <div className="mt-20">
-        <img
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-FFej2uzkrAIfjzPQcHAPXnONdhK6MZ.png"
-          alt="Creators who trust Fainted — subscriber counts and performance stats"
-          className="w-full object-contain"
-        />
+      {/* 3-stat row */}
+      <div className="max-w-7xl mx-auto px-6 mt-20">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-0 divide-y md:divide-y-0 md:divide-x divide-white/[0.08]">
+          {stats.map((s) => (
+            <div key={s.value} className="flex-1 flex flex-col items-center py-10 px-8 text-center">
+              <span className="text-5xl md:text-6xl font-bold text-foreground tracking-tight">
+                {s.value}
+              </span>
+              <span className="mt-3 text-sm text-secondary">{s.label}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
