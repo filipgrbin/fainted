@@ -14,8 +14,8 @@ const config: Config = {
         accent: "hsl(var(--accent))",
       },
       fontFamily: {
-        sans: ["var(--font-geist-sans)"],
-        mono: ["var(--font-geist-mono)"],
+        sans: ["var(--font-inter)", "sans-serif"],
+        mono: ["'Courier New'", "monospace"],
       },
     },
   },

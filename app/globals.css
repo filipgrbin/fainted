@@ -2,14 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
 :root {
   --bg: 0 0% 5.5%;
   --foreground: 0 0% 90%;
   --secondary: 0 0% 53.5%;
   --accent: 344 100% 58%;
-  --font-geist-sans: 'Inter', sans-serif;
+  --font-geist-sans: var(--font-inter), sans-serif;
   --font-geist-mono: 'Courier New', monospace;
 }
 
