@@ -73,7 +73,7 @@ export default function Work() {
               href={item.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="fade-in-section group block"
+              className="group block"
             >
               <div className="relative rounded-xl overflow-hidden aspect-video border border-white/[0.07] group-hover:border-accent/30 transition-all duration-300">
                 <img
