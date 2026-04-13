@@ -54,9 +54,9 @@ export default function FAQ() {
           <p className="text-secondary text-base">Still have questions?</p>
           <a
             href="mailto:matthew@fainted.studio"
-            className="inline-block text-accent hover:underline text-base"
+            className="inline-block text-secondary hover:text-accent transition-colors text-base"
           >
-            Email matthew@fainted.studio
+            <span className="text-secondary">Email</span> matthew@fainted.studio
           </a>
         </div>
 

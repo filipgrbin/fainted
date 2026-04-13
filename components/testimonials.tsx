@@ -58,11 +58,15 @@ export default function Testimonials() {
   return (
     <section id="testimonials" className="section-border py-20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
+        <div className="space-y-12">
         <div className="flex flex-col md:flex-row items-center justify-center gap-0 divide-y md:divide-y-0 md:divide-x divide-white/[0.08]">
-          {stats.map((s) => (
-            <StatItem key={s.value} numeric={s.numeric} suffix={s.suffix} label={s.label} />
-          ))}
+          {stats.map((s, idx) => 
+            idx === 1 ? null : (
+              <StatItem key={s.value} numeric={s.numeric} suffix={s.suffix} label={s.label} />
+            )
+          )}
         </div>
+      </div>
       </div>
     </section>
   );
