@@ -14,8 +14,8 @@ export default function Hero() {
     // Badge slide in from left
     if (badgeRef.current) {
       badgeRef.current.style.opacity = "0";
-      badgeRef.current.style.transform = "translateX(-20px)";
-      badgeRef.current.style.transition = "opacity 0.6s ease-out 0ms, transform 0.6s ease-out 0ms";
+      badgeRef.current.style.transform = "translateX(-50px)";
+      badgeRef.current.style.transition = "opacity 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0ms, transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0ms";
       requestAnimationFrame(() => {
         badgeRef.current!.style.opacity = "1";
         badgeRef.current!.style.transform = "translateX(0)";
@@ -26,8 +26,8 @@ export default function Hero() {
     linesRef.current.forEach((el, i) => {
       if (!el) return;
       el.style.opacity = "0";
-      el.style.transform = "translateX(-30px)";
-      el.style.transition = `opacity 0.7s ease-out ${150 + i * 120}ms, transform 0.7s ease-out ${150 + i * 120}ms`;
+      el.style.transform = "translateX(-80px)";
+      el.style.transition = `opacity 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) ${150 + i * 130}ms, transform 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) ${150 + i * 130}ms`;
       requestAnimationFrame(() => {
         el.style.opacity = "1";
         el.style.transform = "translateX(0)";
@@ -37,8 +37,8 @@ export default function Hero() {
     // Description slide in from left
     if (descRef.current) {
       descRef.current.style.opacity = "0";
-      descRef.current.style.transform = "translateX(-20px)";
-      descRef.current.style.transition = "opacity 0.6s ease-out 550ms, transform 0.6s ease-out 550ms";
+      descRef.current.style.transform = "translateX(-50px)";
+      descRef.current.style.transition = "opacity 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 600ms, transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 600ms";
       requestAnimationFrame(() => {
         descRef.current!.style.opacity = "1";
         descRef.current!.style.transform = "translateX(0)";
@@ -48,8 +48,8 @@ export default function Hero() {
     // Buttons slide in from left
     if (buttonsRef.current) {
       buttonsRef.current.style.opacity = "0";
-      buttonsRef.current.style.transform = "translateX(-20px)";
-      buttonsRef.current.style.transition = "opacity 0.6s ease-out 700ms, transform 0.6s ease-out 700ms";
+      buttonsRef.current.style.transform = "translateX(-50px)";
+      buttonsRef.current.style.transition = "opacity 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 750ms, transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 750ms";
       requestAnimationFrame(() => {
         buttonsRef.current!.style.opacity = "1";
         buttonsRef.current!.style.transform = "translateX(0)";
@@ -133,12 +133,12 @@ export default function Hero() {
 
           {/* Right — autoplaying muted video with pink glow */}
           <div ref={videoRef} className="flex-1 w-full relative">
-            {/* Pink glow behind video */}
+            {/* Pink glow behind video — positioned outside overflow-hidden */}
             <div
               aria-hidden="true"
-              className="absolute -inset-8 rounded-2xl opacity-40"
+              className="absolute -inset-12 rounded-2xl pointer-events-none"
               style={{
-                background: "radial-gradient(circle, rgba(255,61,129,0.20) 0%, rgba(255,61,129,0.08) 50%, transparent 100%)",
+                background: "radial-gradient(circle, rgba(255,61,129,0.35) 0%, rgba(255,61,129,0.15) 40%, transparent 80%)",
               }}
             />
             <div className="relative rounded-2xl overflow-hidden bg-secondary/10 aspect-video border border-white/[0.06]">
