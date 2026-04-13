@@ -54,9 +54,10 @@ export default function FAQ() {
           <p className="text-secondary text-base">Still have questions?</p>
           <a
             href="mailto:matthew@fainted.studio"
-            className="inline-block text-secondary hover:text-accent transition-colors text-base"
+            className="inline-block text-base"
           >
-            <span className="text-secondary">Email</span><a href="emailto:matthew@fainted.studio" class="inline-block text-accent hover:underline text-base">matthew@fainted.studio</a>
+            <span className="text-secondary">Email</span>{" "}
+            <span className="text-accent hover:underline">matthew@fainted.studio</span>
           </a>
         </div>
 
