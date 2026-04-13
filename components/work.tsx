@@ -5,12 +5,30 @@ import { useState } from "react";
 type Category = "All" | "Long Form" | "Short Form";
 
 const workItems = [
-  { title: "Gaming Montage", category: "Long Form" as const },
-  { title: "Product Launch", category: "Short Form" as const },
-  { title: "Documentary Edit", category: "Long Form" as const },
-  { title: "TikTok Hook Reel", category: "Short Form" as const },
-  { title: "YouTube Vlog", category: "Long Form" as const },
-  { title: "Instagram Reel", category: "Short Form" as const },
+  {
+    title: "Finance Re-Edit – Clean",
+    category: "Short Form" as const,
+    youtubeId: "dY4zlJvbAnw",
+    url: "https://youtu.be/dY4zlJvbAnw",
+  },
+  {
+    title: "Finance Re-Edit – Advanced",
+    category: "Short Form" as const,
+    youtubeId: "oiXdDq0x0fE",
+    url: "https://youtu.be/oiXdDq0x0fE",
+  },
+  {
+    title: "Retention Edit – Trial",
+    category: "Short Form" as const,
+    youtubeId: "mwriO-zyi_o",
+    url: "https://youtube.com/shorts/mwriO-zyi_o",
+  },
+  {
+    title: "Education Edit",
+    category: "Long Form" as const,
+    youtubeId: "-zrXokX7LSw",
+    url: "https://youtu.be/-zrXokX7LSw",
+  },
 ];
 
 const filters: Category[] = ["All", "Long Form", "Short Form"];
@@ -18,27 +36,29 @@ const filters: Category[] = ["All", "Long Form", "Short Form"];
 export default function Work() {
   const [active, setActive] = useState<Category>("All");
 
-  const filtered = active === "All" ? workItems : workItems.filter((item) => item.category === active);
+  const filtered =
+    active === "All" ? workItems : workItems.filter((item) => item.category === active);
 
   return (
-    <section id="work" className="py-20 px-6 max-w-6xl mx-auto">
-      <div className="space-y-8">
-        <div className="space-y-3">
+    <section id="work" className="section-border py-20 px-6 max-w-6xl mx-auto">
+      <div className="space-y-10">
+        <div className="space-y-3 fade-in-section">
+          <p className="text-accent text-sm font-medium tracking-widest uppercase">Work</p>
           <h2 className="text-4xl md:text-5xl font-bold text-balance">My Work</h2>
           <p className="text-secondary text-lg leading-relaxed">
             A selection of recent projects showcasing my editing style and creative direction.
           </p>
         </div>
 
-        <div className="flex gap-3 flex-wrap">
+        <div className="flex gap-3 flex-wrap fade-in-section">
           {filters.map((filter) => (
             <button
               key={filter}
               onClick={() => setActive(filter)}
-              className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
+              className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
                 active === filter
                   ? "bg-accent text-background"
-                  : "bg-secondary/20 text-foreground hover:bg-secondary/30"
+                  : "bg-white/[0.05] border border-white/[0.08] text-foreground hover:border-accent/30"
               }`}
             >
               {filter}
@@ -46,20 +66,39 @@ export default function Work() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {filtered.map((item, index) => (
-            <div key={`${item.title}-${index}`} className="group cursor-pointer">
-              <div className="bg-secondary/10 aspect-video rounded-lg mb-3 flex items-center justify-center overflow-hidden hover:opacity-80 transition-opacity">
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-secondary/30">{index + 1}</div>
-                  <p className="text-secondary/50 text-sm mt-1">Placeholder Video</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {filtered.map((item) => (
+            <a
+              key={item.youtubeId}
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="fade-in-section group block"
+            >
+              <div className="relative rounded-xl overflow-hidden aspect-video border border-white/[0.07] group-hover:border-accent/30 transition-all duration-300">
+                <img
+                  src={`https://img.youtube.com/vi/${item.youtubeId}/hqdefault.jpg`}
+                  alt={item.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                {/* Play overlay */}
+                <div className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-14 h-14 rounded-full bg-accent/90 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+                      <polygon points="5 3 19 12 5 21 5 3"/>
+                    </svg>
+                  </div>
                 </div>
               </div>
-              <h3 className="font-semibold text-foreground group-hover:text-accent transition-colors">
-                {item.title}
-              </h3>
-              <p className="text-sm text-secondary">{item.category}</p>
-            </div>
+              <div className="mt-3 flex items-center justify-between">
+                <h3 className="font-semibold text-foreground group-hover:text-accent transition-colors">
+                  {item.title}
+                </h3>
+                <span className="text-xs text-secondary border border-white/[0.08] rounded-full px-3 py-1">
+                  {item.category}
+                </span>
+              </div>
+            </a>
           ))}
         </div>
       </div>

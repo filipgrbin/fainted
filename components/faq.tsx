@@ -9,7 +9,7 @@ export default function FAQ() {
     {
       question: "What is your turnaround time?",
       answer:
-        "Usually 2–3 days, depending on the complexity of the project.",
+        "Usually 3–4 days, depending on the complexity of the project.",
     },
     {
       question: "What's your pricing?",
@@ -17,7 +17,7 @@ export default function FAQ() {
         "Pricing depends on the complexity and scope of the project. Let's discuss your needs and find the best option for you.",
     },
     {
-      question: "What If I don't like the edit?",
+      question: "What if I don't like the edit?",
       answer:
         "I include revisions to ensure the final result matches your expectations and vision.",
     },
@@ -29,7 +29,7 @@ export default function FAQ() {
     {
       question: "What type of video do you edit?",
       answer:
-        "I edit a wide range of content, including vlogs, gaming, podcasts, entertainment and documentaries. No matter the niche, I craft edits that match your vision and help your content stand out.",
+        "I edit a wide range of content, including finance, gaming, podcasts, entertainment and documentaries. No matter the niche, I craft edits that match your vision and help your content stand out.",
     },
     {
       question: "How do I send my footage?",
@@ -44,43 +44,53 @@ export default function FAQ() {
   ];
 
   return (
-    <section id="faq" className="py-20 px-6 max-w-4xl mx-auto">
+    <section id="faq" className="section-border py-20 px-6 max-w-4xl mx-auto">
       <div className="space-y-12">
-        <div className="space-y-3">
-          <h2 className="text-4xl md:text-5xl font-bold">Everything You Need To Know</h2>
-          <p className="text-secondary text-lg">
-            Still have questions? Email{" "}
-            <a
-              href="mailto:matthew@fainted.studio"
-              className="text-accent hover:underline"
-            >
-              matthew@fainted.studio
-            </a>
-          </p>
+        <div className="space-y-3 fade-in-section">
+          <p className="text-accent text-sm font-medium tracking-widest uppercase">FAQ</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-balance">
+            Everything You Need To Know
+          </h2>
+          <p className="text-secondary text-base">Still have questions?</p>
+          <a
+            href="mailto:matthew@fainted.studio"
+            className="inline-block text-accent hover:underline text-base"
+          >
+            Email matthew@fainted.studio
+          </a>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-3">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="border border-secondary/20 rounded-lg overflow-hidden hover:border-accent/30 transition-colors"
+              className="fade-in-section group border border-white/[0.07] rounded-xl overflow-hidden hover:border-accent/30 hover:bg-white/[0.03] transition-all duration-300"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-6 py-4 text-left font-semibold flex items-center justify-between hover:bg-secondary/5 transition-colors"
+                className="w-full px-6 py-5 text-left font-semibold flex items-center justify-between gap-4"
+                aria-expanded={openIndex === index}
               >
                 <span>{faq.question}</span>
-                <span
-                  className={`text-accent transition-transform ${
-                    openIndex === index ? "rotate-180" : ""
-                  }`}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className={`flex-shrink-0 text-accent transition-transform duration-300 ${openIndex === index ? "rotate-180" : ""}`}
+                  aria-hidden="true"
                 >
-                  ▼
-                </span>
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
               </button>
               {openIndex === index && (
-                <div className="px-6 py-4 bg-secondary/5 border-t border-secondary/20 text-secondary">
-                  {faq.answer}
+                <div className="px-6 pb-5 text-secondary text-sm leading-relaxed border-t border-white/[0.05]">
+                  <p className="pt-4">{faq.answer}</p>
                 </div>
               )}
             </div>

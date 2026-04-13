@@ -2,22 +2,25 @@
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-20 px-6 max-w-4xl mx-auto">
+    <section id="contact" className="section-border py-20 px-6 max-w-4xl mx-auto">
       <div className="space-y-12">
-        <div className="space-y-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold">Let&apos;s Work Together</h2>
+        <div className="space-y-4 text-center fade-in-section">
+          <p className="text-accent text-sm font-medium tracking-widest uppercase">Contact</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-balance border-b-0">
+            Let&apos;s Work Together
+          </h2>
           <p className="text-secondary text-lg max-w-2xl mx-auto">
             Have a project in mind? Fill out the form and let&apos;s bring your ideas to life with top-quality editing.
           </p>
         </div>
 
-        <form className="space-y-6 max-w-2xl mx-auto">
+        <form className="space-y-5 max-w-2xl mx-auto fade-in-section">
           <div>
             <label className="block text-sm font-medium mb-2">Your Name</label>
             <input
               type="text"
               placeholder="Enter your name"
-              className="w-full px-4 py-3 bg-secondary/10 border border-secondary/20 rounded-lg focus:outline-none focus:border-accent transition-colors text-foreground placeholder:text-secondary/50"
+              className="w-full px-4 py-3 bg-white/[0.04] border border-white/[0.08] rounded-xl focus:outline-none focus:border-accent transition-colors text-foreground placeholder:text-secondary/50"
             />
           </div>
 
@@ -26,20 +29,8 @@ export default function Contact() {
             <input
               type="email"
               placeholder="your@email.com"
-              className="w-full px-4 py-3 bg-secondary/10 border border-secondary/20 rounded-lg focus:outline-none focus:border-accent transition-colors text-foreground placeholder:text-secondary/50"
+              className="w-full px-4 py-3 bg-white/[0.04] border border-white/[0.08] rounded-xl focus:outline-none focus:border-accent transition-colors text-foreground placeholder:text-secondary/50"
             />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium mb-2">Project Type</label>
-            <select className="w-full px-4 py-3 bg-secondary/10 border border-secondary/20 rounded-lg focus:outline-none focus:border-accent transition-colors text-foreground">
-              <option>Select project type</option>
-              <option>Long Form Video</option>
-              <option>Short Form Video</option>
-              <option>Podcast</option>
-              <option>Gaming Content</option>
-              <option>Other</option>
-            </select>
           </div>
 
           <div>
@@ -47,22 +38,22 @@ export default function Contact() {
             <textarea
               placeholder="Tell me about your project..."
               rows={5}
-              className="w-full px-4 py-3 bg-secondary/10 border border-secondary/20 rounded-lg focus:outline-none focus:border-accent transition-colors text-foreground placeholder:text-secondary/50"
-            ></textarea>
+              className="w-full px-4 py-3 bg-white/[0.04] border border-white/[0.08] rounded-xl focus:outline-none focus:border-accent transition-colors text-foreground placeholder:text-secondary/50 resize-none"
+            />
           </div>
 
           <button
             type="submit"
-            className="w-full px-8 py-4 bg-accent text-background font-semibold rounded-lg hover:opacity-90 transition-opacity"
+            className="btn-primary w-full px-8 py-4 bg-accent text-background font-semibold rounded-xl border border-accent"
           >
             Send Message
           </button>
         </form>
 
-        <div className="border-t border-secondary/20 pt-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+        <div className="border-t border-white/[0.07] pt-10 fade-in-section">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 text-center md:text-left">
             <div>
-              <p className="text-sm text-secondary mb-2">Email</p>
+              <p className="text-sm text-secondary mb-1">Email</p>
               <a
                 href="mailto:matthew@fainted.studio"
                 className="text-foreground hover:text-accent transition-colors font-medium"
@@ -70,17 +61,18 @@ export default function Contact() {
                 matthew@fainted.studio
               </a>
             </div>
+            <div className="hidden md:block w-px h-8 bg-white/[0.08]" />
             <div>
               <p className="text-sm text-secondary mb-2">Follow</p>
-              <div className="flex gap-4">
-                <a href="#" className="hover:text-accent transition-colors">
-                  X
+              <div className="flex gap-5">
+                <a href="https://x.com/fainted_edit" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-accent transition-colors" aria-label="X (Twitter)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.73-8.835L1.254 2.25H8.08l4.261 5.636 5.903-5.636Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                 </a>
-                <a href="#" className="hover:text-accent transition-colors">
-                  Discord
+                <a href="https://www.instagram.com/fainted.vfx/" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-accent transition-colors" aria-label="Instagram">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
                 </a>
-                <a href="#" className="hover:text-accent transition-colors">
-                  Instagram
+                <a href="https://discord.com/users/290060891548811264" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-accent transition-colors" aria-label="Discord">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.492c-1.53-.69-3.17-1.2-4.885-1.49a.075.075 0 0 0-.079.036c-.21.369-.444.85-.608 1.23a18.566 18.566 0 0 0-5.487 0 12.36 12.36 0 0 0-.617-1.23A.077.077 0 0 0 8.562 3c-1.714.29-3.354.8-4.885 1.491a.07.07 0 0 0-.032.027C.533 9.093-.32 13.555.099 17.961a.08.08 0 0 0 .031.055 20.03 20.03 0 0 0 5.993 2.98.078.078 0 0 0 .084-.026 13.83 13.83 0 0 0 1.226-1.963.074.074 0 0 0-.041-.104 13.201 13.201 0 0 1-1.872-.878.075.075 0 0 1-.008-.125c.126-.093.252-.19.372-.287a.075.075 0 0 1 .078-.01c3.927 1.764 8.18 1.764 12.061 0a.075.075 0 0 1 .079.009c.12.098.245.195.372.288a.075.075 0 0 1-.006.125c-.598.344-1.22.635-1.873.877a.075.075 0 0 0-.041.105c.36.687.772 1.341 1.225 1.962a.077.077 0 0 0 .084.028 19.963 19.963 0 0 0 6.002-2.981.076.076 0 0 0 .032-.054c.5-5.094-.838-9.52-3.549-13.442a.06.06 0 0 0-.031-.028zM8.02 15.278c-1.182 0-2.157-1.069-2.157-2.38 0-1.312.956-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.956 2.38-2.157 2.38zm7.975 0c-1.183 0-2.157-1.069-2.157-2.38 0-1.312.955-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.946 2.38-2.157 2.38z"/></svg>
                 </a>
               </div>
             </div>

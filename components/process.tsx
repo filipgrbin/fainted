@@ -10,7 +10,7 @@ export default function Process() {
       number: "02",
       title: "Production",
       description:
-        "I work with your raw footage, selecting the strongest moments and enhancing them with effects, transitions, sound design, and motion graphics to create a cinematic and engaging final product.",
+        "I work with your raw footage, selecting the strongest moments and enhancing them with effects, transitions, sound design, and motion graphics to create a cinematic final product.",
     },
     {
       number: "03",
@@ -27,27 +27,27 @@ export default function Process() {
   ];
 
   return (
-    <section id="process" className="py-20 px-6 max-w-6xl mx-auto">
+    <section id="process" className="section-border py-20 px-6 max-w-6xl mx-auto">
       <div className="space-y-12">
-        <div className="space-y-3">
-          <h2 className="text-4xl md:text-5xl font-bold">My Creative Process</h2>
-          <p className="text-secondary text-lg max-w-2xl">
+        <div className="space-y-3 fade-in-section">
+          <p className="text-accent text-sm font-medium tracking-widest uppercase">Process</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-balance">My Creative Process</h2>
+          <p className="text-secondary text-lg max-w-2xl leading-relaxed">
             From concept to final delivery, every part of the process is designed for high-impact results and a hassle-free experience for you.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {steps.map((step) => (
-            <div key={step.number} className="space-y-4">
-              <div className="flex items-start gap-4">
-                <span className="text-3xl font-bold text-accent">{step.number}</span>
-                <div className="space-y-2">
-                  <h3 className="text-2xl font-semibold">{step.title}</h3>
-                  <p className="text-secondary leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
-              </div>
+            <div
+              key={step.number}
+              className="fade-in-section group p-7 bg-white/[0.03] border border-white/[0.07] rounded-2xl hover:border-accent/30 hover:bg-white/[0.06] transition-all duration-300 cursor-default"
+            >
+              <span className="text-4xl font-bold text-accent/50 group-hover:text-accent transition-colors duration-300 block mb-4">
+                {step.number}
+              </span>
+              <h3 className="text-xl font-semibold text-foreground mb-2">{step.title}</h3>
+              <p className="text-secondary leading-relaxed text-sm">{step.description}</p>
             </div>
           ))}
         </div>
