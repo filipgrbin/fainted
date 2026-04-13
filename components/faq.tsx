@@ -56,7 +56,7 @@ export default function FAQ() {
             href="mailto:matthew@fainted.studio"
             className="inline-block text-secondary hover:text-accent transition-colors text-base"
           >
-            <span className="text-secondary">Email</span> matthew@fainted.studio
+            <span className="text-secondary">Email</span><a href="emailto:matthew@fainted.studio" class="inline-block text-accent hover:underline text-base">matthew@fainted.studio</a>
           </a>
         </div>
 
