@@ -73,13 +73,6 @@ export default function Navigation() {
             >
               Let&apos;s Work Together
             </button>
-            <div className="flex gap-4 pt-2">
-              {socials.map((s) => (
-                <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} className="text-secondary hover:text-accent transition-colors">
-                  {s.icon}
-                </a>
-              ))}
-            </div>
           </div>
         )}
       </nav>
