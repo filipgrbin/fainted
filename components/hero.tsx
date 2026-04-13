@@ -4,18 +4,68 @@ import { useEffect, useRef } from "react";
 
 export default function Hero() {
   const linesRef = useRef<HTMLSpanElement[]>([]);
+  const textBlockRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLDivElement>(null);
+  const badgeRef = useRef<HTMLDivElement>(null);
+  const descRef = useRef<HTMLParagraphElement>(null);
+  const buttonsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Badge slide in from left
+    if (badgeRef.current) {
+      badgeRef.current.style.opacity = "0";
+      badgeRef.current.style.transform = "translateX(-20px)";
+      badgeRef.current.style.transition = "opacity 0.6s ease-out 0ms, transform 0.6s ease-out 0ms";
+      requestAnimationFrame(() => {
+        badgeRef.current!.style.opacity = "1";
+        badgeRef.current!.style.transform = "translateX(0)";
+      });
+    }
+
+    // Headline lines slide in from left with stagger
     linesRef.current.forEach((el, i) => {
       if (!el) return;
       el.style.opacity = "0";
-      el.style.transform = "translateY(20px)";
-      el.style.transition = `opacity 0.55s ease-out ${i * 90}ms, transform 0.55s ease-out ${i * 90}ms`;
+      el.style.transform = "translateX(-30px)";
+      el.style.transition = `opacity 0.7s ease-out ${150 + i * 120}ms, transform 0.7s ease-out ${150 + i * 120}ms`;
       requestAnimationFrame(() => {
         el.style.opacity = "1";
-        el.style.transform = "translateY(0)";
+        el.style.transform = "translateX(0)";
       });
     });
+
+    // Description slide in from left
+    if (descRef.current) {
+      descRef.current.style.opacity = "0";
+      descRef.current.style.transform = "translateX(-20px)";
+      descRef.current.style.transition = "opacity 0.6s ease-out 550ms, transform 0.6s ease-out 550ms";
+      requestAnimationFrame(() => {
+        descRef.current!.style.opacity = "1";
+        descRef.current!.style.transform = "translateX(0)";
+      });
+    }
+
+    // Buttons slide in from left
+    if (buttonsRef.current) {
+      buttonsRef.current.style.opacity = "0";
+      buttonsRef.current.style.transform = "translateX(-20px)";
+      buttonsRef.current.style.transition = "opacity 0.6s ease-out 700ms, transform 0.6s ease-out 700ms";
+      requestAnimationFrame(() => {
+        buttonsRef.current!.style.opacity = "1";
+        buttonsRef.current!.style.transform = "translateX(0)";
+      });
+    }
+
+    // Video slide in from right
+    if (videoRef.current) {
+      videoRef.current.style.opacity = "0";
+      videoRef.current.style.transform = "translateX(30px)";
+      videoRef.current.style.transition = "opacity 0.8s ease-out 300ms, transform 0.8s ease-out 300ms";
+      requestAnimationFrame(() => {
+        videoRef.current!.style.opacity = "1";
+        videoRef.current!.style.transform = "translateX(0)";
+      });
+    }
   }, []);
 
   const scrollToSection = (id: string) => {
@@ -38,9 +88,9 @@ export default function Hero() {
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
 
           {/* Left — text + buttons */}
-          <div className="flex-1 space-y-6">
+          <div ref={textBlockRef} className="flex-1 space-y-6">
             {/* Badge with pulsing dot */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20">
+            <div ref={badgeRef} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20">
               <span
                 className="w-2 h-2 rounded-full bg-accent"
                 style={{ animation: "pulse-dot 2.5s ease-in-out infinite" }}
@@ -61,11 +111,11 @@ export default function Hero() {
               ))}
             </h1>
 
-            <p className="text-lg text-secondary max-w-xl leading-relaxed">
+            <p ref={descRef} className="text-lg text-secondary max-w-xl leading-relaxed">
               I help creators turn raw footage into top-quality content that captures attention and performs across platforms. From long-form storytelling to high-energy shorts, every edit is crafted to engage viewers and elevate your content.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-2">
+            <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-4 pt-2">
               <button
                 onClick={() => scrollToSection("work")}
                 className="btn-primary px-8 py-4 bg-accent text-background font-semibold rounded-lg border border-accent"
@@ -81,8 +131,16 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right — autoplaying muted video */}
-          <div className="flex-1 w-full">
+          {/* Right — autoplaying muted video with pink glow */}
+          <div ref={videoRef} className="flex-1 w-full relative">
+            {/* Pink glow behind video */}
+            <div
+              aria-hidden="true"
+              className="absolute -inset-8 rounded-2xl opacity-40"
+              style={{
+                background: "radial-gradient(circle, rgba(255,61,129,0.20) 0%, rgba(255,61,129,0.08) 50%, transparent 100%)",
+              }}
+            />
             <div className="relative rounded-2xl overflow-hidden bg-secondary/10 aspect-video border border-white/[0.06]">
               <video
                 className="w-full h-full object-cover"
