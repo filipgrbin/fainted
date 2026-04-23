@@ -29,6 +29,12 @@ const workItems = [
     youtubeId: "-zrXokX7LSw",
     url: "https://youtu.be/-zrXokX7LSw",
   },
+  {
+    title: "Faceless explainer Re-edit - Motion",
+    category: "Long Form" as const,
+    youtubeId: "-zrXokX7LSw",
+    url: "https://youtube.com/watch?v=tUXCqiQo3KE",
+  },
 ];
 
 const filters: Category[] = ["All", "Long Form", "Short Form"];
@@ -56,8 +62,8 @@ export default function Work() {
               key={filter}
               onClick={() => setActive(filter)}
               className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${active === filter
-                  ? "bg-accent text-background"
-                  : "bg-white/[0.05] border border-white/[0.08] text-foreground hover:border-accent/30"
+                ? "bg-accent text-background"
+                : "bg-white/[0.05] border border-white/[0.08] text-foreground hover:border-accent/30"
                 }`}
             >
               {filter}
