@@ -4,42 +4,56 @@ import { useState } from "react";
 
 type Category = "All" | "Long Form" | "Short Form";
 
-const workItems = [
+type WorkItem = {
+  title: string;
+  category: Category;
+  youtubeId: string;
+  url: string;
+  short?: boolean;
+};
+
+const workItems: WorkItem[] = [
   {
     title: "Finance Re-Edit – Clean",
     category: "Short Form" as const,
     youtubeId: "dY4zlJvbAnw",
     url: "https://youtu.be/dY4zlJvbAnw",
+    short: true,
   },
   {
     title: "Finance Re-Edit – Advanced",
     category: "Short Form" as const,
     youtubeId: "oiXdDq0x0fE",
     url: "https://youtu.be/oiXdDq0x0fE",
+    short: true,
   },
   {
     title: "Retention Edit – Trial",
     category: "Short Form" as const,
     youtubeId: "mwriO-zyi_o",
     url: "https://youtube.com/shorts/mwriO-zyi_o",
+    short: true,
   },
   {
     title: "Who am I",
     category: "Long Form" as const,
     youtubeId: "-zrXokX7LSw",
     url: "https://youtu.be/-zrXokX7LSw",
+    short: false,
   },
   {
     title: "Faceless explainer Re-edit - Motion",
     category: "Short Form" as const,
     youtubeId: "tUXCqiQo3KE",
     url: "https://youtube.com/watch?v=tUXCqiQo3KE",
+    short: true,
   },
   {
     title: "Bro turned into IShowSplash",
     category: "Short Form" as const,
     youtubeId: "",
     url: "https://youtube.com/shorts/T0a3g6f47oo",
+    short: true,
   },
 ];
 
@@ -86,9 +100,9 @@ export default function Work() {
               rel="noopener noreferrer"
               className="group block"
             >
-              <div className="relative rounded-xl overflow-hidden aspect-video border border-white/[0.07] group-hover:border-accent/30 transition-all duration-300">
+              <div className={`relative rounded-xl overflow-hidden border border-white/[0.07] group-hover:border-accent/30 transition-all duration-300 ${item.short ? "aspect-[9/16]" : "aspect-video"}`}>
                 <img
-                  src={`https://img.youtube.com/vi/${item.youtubeId}/hqdefault.jpg`}
+                  src={item.short ? `https://img.youtube.com/vi/${item.youtubeId}/maxresdefault.jpg` : `https://img.youtube.com/vi/${item.youtubeId}/hqdefault.jpg`}
                   alt={item.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
