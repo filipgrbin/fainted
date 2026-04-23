@@ -6,64 +6,28 @@ export default function Contact() {
       <div className="space-y-12">
         <div className="space-y-4 text-center fade-in-section">
           <p className="text-accent text-sm font-medium tracking-widest uppercase">Contact</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-balance border-b-0">
+          <h2 className="text-4xl md:text-5xl font-bold text-balance">
             Let&apos;s Work Together
           </h2>
           <p className="text-secondary text-lg max-w-2xl mx-auto">
-            Have a project in mind? Fill out the form and let&apos;s bring your ideas to life with top-quality editing.
+            Have a project in mind? Reach out and let&apos;s bring your vision to life with top-quality editing.
           </p>
         </div>
-
-        <form className="space-y-5 max-w-2xl mx-auto fade-in-section">
-          <div>
-            <label className="block text-sm font-medium mb-2">Your Name</label>
-            <input
-              type="text"
-              placeholder="Enter your name"
-              className="w-full px-4 py-3 bg-white/[0.04] border border-white/[0.08] rounded-xl focus:outline-none focus:border-accent transition-colors text-foreground placeholder:text-secondary/50"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium mb-2">Email</label>
-            <input
-              type="email"
-              placeholder="your@email.com"
-              className="w-full px-4 py-3 bg-white/[0.04] border border-white/[0.08] rounded-xl focus:outline-none focus:border-accent transition-colors text-foreground placeholder:text-secondary/50"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium mb-2">Project Details</label>
-            <textarea
-              placeholder="Tell me about your project..."
-              rows={5}
-              className="w-full px-4 py-3 bg-white/[0.04] border border-white/[0.08] rounded-xl focus:outline-none focus:border-accent transition-colors text-foreground placeholder:text-secondary/50 resize-none"
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="btn-primary w-full px-8 py-4 bg-accent text-background font-semibold rounded-xl border border-accent"
-          >
-            Send Message
-          </button>
-        </form>
 
         <div className="border-t border-white/[0.07] pt-10 fade-in-section">
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 text-center md:text-left">
             <div>
-              <p className="text-sm text-secondary mb-1">Email</p>
+              <p className="text-sm text-secondary mb-2">Get in touch</p>
               <a
                 href="mailto:matthew@fainted.studio"
-                className="text-foreground hover:text-accent transition-colors font-medium"
+                className="text-foreground hover:text-accent transition-colors font-medium text-lg"
               >
                 matthew@fainted.studio
               </a>
             </div>
-            <div className="hidden md:block w-px h-8 bg-white/[0.08]" />
+            <div className="hidden md:block w-px h-12 bg-white/[0.08]" />
             <div>
-              <p className="text-sm text-secondary mb-2">Follow</p>
+              <p className="text-sm text-secondary mb-3">Follow</p>
               <div className="flex gap-5">
                 <a href="https://x.com/fainted_edit" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-accent transition-colors" aria-label="X (Twitter)">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.73-8.835L1.254 2.25H8.08l4.261 5.636 5.903-5.636Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
