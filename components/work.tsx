@@ -24,7 +24,7 @@ const workItems = [
     url: "https://youtube.com/shorts/mwriO-zyi_o",
   },
   {
-    title: "Education Edit",
+    title: "Who am I",
     category: "Long Form" as const,
     youtubeId: "-zrXokX7LSw",
     url: "https://youtu.be/-zrXokX7LSw",
@@ -55,11 +55,10 @@ export default function Work() {
             <button
               key={filter}
               onClick={() => setActive(filter)}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
-                active === filter
+              className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${active === filter
                   ? "bg-accent text-background"
                   : "bg-white/[0.05] border border-white/[0.08] text-foreground hover:border-accent/30"
-              }`}
+                }`}
             >
               {filter}
             </button>
@@ -85,7 +84,7 @@ export default function Work() {
                 <div className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="w-14 h-14 rounded-full bg-accent/90 flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden="true">
-                      <polygon points="5 3 19 12 5 21 5 3"/>
+                      <polygon points="5 3 19 12 5 21 5 3" />
                     </svg>
                   </div>
                 </div>
