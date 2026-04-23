@@ -31,9 +31,15 @@ const workItems = [
   },
   {
     title: "Faceless explainer Re-edit - Motion",
-    category: "Long Form" as const,
-    youtubeId: "-zrXokX7LSw",
+    category: "Short Form" as const,
+    youtubeId: "tUXCqiQo3KE",
     url: "https://youtube.com/watch?v=tUXCqiQo3KE",
+  },
+  {
+    title: "Bro turned into IShowSplash",
+    category: "Short Form" as const,
+    youtubeId: "",
+    url: "https://youtube.com/shorts/T0a3g6f47oo",
   },
 ];
 
