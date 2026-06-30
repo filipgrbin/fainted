@@ -9,7 +9,7 @@ const workItems = [
     title: "The Kendrick And Drake Beef: A Retrospective",
     category: "Long Form" as const,
     youtubeId: "vDkUU9fE_J0",
-    url: "https://www.youtube.com/watch?v=vDkUU9fE_J0&t=951s",
+    url: "https://www.youtube.com/watch?v=vDkUU9fE_J0",
   },
   {
     title: "Can't Buy A Thrill: The Beginning of Steely Dan's Madness",
@@ -20,8 +20,8 @@ const workItems = [
   {
     title: "Kanye and J. Cole's Entire Beef Explained",
     category: "Long Form" as const,
-    youtubeId: "awTAIo4&t=639s",
-    url: "https://www.youtube.com/watch?v=NdJ-awTAIo4&t=639s",
+    youtubeId: "NdJ-awTAIo4",
+    url: "https://www.youtube.com/watch?v=NdJ-awTAIo4",
   },
   {
     title: "Finance Re-Edit – Clean",
