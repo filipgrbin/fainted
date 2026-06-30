@@ -6,6 +6,24 @@ type Category = "All" | "Long Form" | "Short Form";
 
 const workItems = [
   {
+    title: "The Kendrick And Drake Beef: A Retrospective",
+    category: "Long Form" as const,
+    youtubeId: "vDkUU9fE_J0",
+    url: "https://www.youtube.com/watch?v=vDkUU9fE_J0&t=951s",
+  },
+  {
+    title: "Can't Buy A Thrill: The Beginning of Steely Dan's Madness",
+    category: "Long Form" as const,
+    youtubeId: "1UA7D8ojjs4",
+    url: "https://www.youtube.com/watch?v=1UA7D8ojjs4",
+  },
+  {
+    title: "Kanye and J. Cole's Entire Beef Explained",
+    category: "Long Form" as const,
+    youtubeId: "awTAIo4&t=639s",
+    url: "https://www.youtube.com/watch?v=NdJ-awTAIo4&t=639s",
+  },
+  {
     title: "Finance Re-Edit – Clean",
     category: "Short Form" as const,
     youtubeId: "dY4zlJvbAnw",
@@ -35,12 +53,12 @@ const workItems = [
     youtubeId: "tUXCqiQo3KE",
     url: "https://youtube.com/watch?v=tUXCqiQo3KE",
   },
-  {
+ /* {
     title: "Bro turned into IShowSplash",
     category: "Short Form" as const,
     youtubeId: "",
     url: "https://youtube.com/shorts/T0a3g6f47oo",
-  },
+  },*/
 ];
 
 const filters: Category[] = ["All", "Long Form", "Short Form"];
