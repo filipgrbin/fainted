@@ -24,6 +24,12 @@ const workItems = [
     url: "https://www.youtube.com/watch?v=NdJ-awTAIo4",
   },
   {
+    title: "The Walking Dead's \"Camp Era\" (And What It Represents)",
+    category: "Long Form" as const,
+    youtubeId: "dV271A7f_EA",
+    url: "https://www.youtube.com/watch?v=dV271A7f_EA",
+  },
+  {
     title: "Finance Re-Edit – Clean",
     category: "Short Form" as const,
     youtubeId: "dY4zlJvbAnw",

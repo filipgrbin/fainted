@@ -142,19 +142,14 @@ export default function Hero() {
               }}
             />
             <div className="relative rounded-2xl overflow-hidden bg-secondary/10 aspect-video border border-white/[0.06]">
-              <video
-                className="w-full h-full object-cover"
-                autoPlay
-                muted
-                loop
-                playsInline
-              >
-                <source src="https://youtu.be/dY4zlJvbAnw" type="video/mp4" />
-              </video>
-              {/* Placeholder shown when video isn't loaded */}
-              <div className="absolute inset-0 flex items-center justify-center bg-secondary/10">
-                <span className="text-secondary/40 text-sm">Video Preview</span>
-              </div>
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/qwW_HbAaYVM?autoplay=1&mute=1&loop=1&playlist=qwW_HbAaYVM&playsinline=1&rel=0&modestbranding=1"
+                title="2026 Showreel | Editing Portfolio"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                referrerPolicy="strict-origin-when-cross-origin"
+              />
             </div>
           </div>
 
