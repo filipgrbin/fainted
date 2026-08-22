@@ -73,7 +73,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-20 overflow-x-clip">
       {/* Radial glow behind heading */}
       <div
         aria-hidden="true"
@@ -132,13 +132,14 @@ export default function Hero() {
           </div>
 
           {/* Right — autoplaying muted video with pink glow */}
-          <div ref={videoRef} className="flex-1 w-full relative">
-            {/* Pink glow behind video — positioned outside overflow-hidden */}
+          <div ref={videoRef} className="flex-1 w-full relative py-16">
+            {/* Pink glow behind video — tall ellipse so it fades instead of clipping top/bottom */}
             <div
               aria-hidden="true"
-              className="absolute -inset-12 rounded-2xl pointer-events-none"
+              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[160%] h-[180%] pointer-events-none"
               style={{
-                background: "radial-gradient(circle, rgba(255,61,129,0.35) 0%, rgba(255,61,129,0.15) 40%, transparent 80%)",
+                background:
+                  "radial-gradient(ellipse at center, rgba(255,61,129,0.4) 0%, rgba(255,61,129,0.16) 38%, transparent 68%)",
               }}
             />
             <div className="relative rounded-2xl overflow-hidden bg-secondary/10 aspect-video border border-white/[0.06]">
