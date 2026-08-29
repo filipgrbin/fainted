@@ -30,6 +30,12 @@ const workItems = [
     url: "https://www.youtube.com/watch?v=dV271A7f_EA",
   },
   {
+    title: "Mr. Morale & The Big Steppers: A Retrospective",
+    category: "Long Form" as const,
+    youtubeId: "pbgdCRR504A",
+    url: "https://www.youtube.com/watch?v=pbgdCRR504A",
+  },
+  {
     title: "Finance Re-Edit – Clean",
     category: "Short Form" as const,
     youtubeId: "dY4zlJvbAnw",
