@@ -36,6 +36,12 @@ const workItems = [
     url: "https://www.youtube.com/watch?v=pbgdCRR504A",
   },
   {
+    title: "Ranking EVERY Kanye West Song",
+    category: "Long Form" as const,
+    youtubeId: "0pTszsdRDI0",
+    url: "https://www.youtube.com/watch?v=0pTszsdRDI0",
+  },
+  {
     title: "Finance Re-Edit – Clean",
     category: "Short Form" as const,
     youtubeId: "dY4zlJvbAnw",
