@@ -30,6 +30,12 @@ const workItems = [
     url: "https://www.youtube.com/watch?v=dV271A7f_EA",
   },
   {
+    title: "What Is Invincible's Win/Loss Record?",
+    category: "Long Form" as const,
+    youtubeId: "kHj4rgdvIuI",
+    url: "https://www.youtube.com/watch?v=kHj4rgdvIuI",
+  },
+  {
     title: "Mr. Morale & The Big Steppers: A Retrospective",
     category: "Long Form" as const,
     youtubeId: "pbgdCRR504A",
